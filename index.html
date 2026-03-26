@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WAYVI - Urban Life Companion</title>
+    <title>BLOCK - Urban Life Companion</title>
     <style>
         body, html {
             margin: 0;
@@ -14,17 +14,17 @@
             color: #fff;
         }
 
-        /* Hintergrund-Anpassung für Laptop & Handy */
+        /* Hintergrund-Anpassung: Zentriert & Skaliert */
         .bg-container {
             background-image: url('background.jpg');
-            /* Fix für Laptop: Bild passt sich der Breite an und wird scrollbar statt gezoomt */
-            background-size: 100% auto;
-            background-position: center top;
+            background-size: cover; /* Sorgt für Vollbild-Look */
+            background-position: center center; /* Zentriert das Bild horizontal & vertikal */
             background-repeat: no-repeat;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            justify-content: flex-end; /* Schiebt den Inhalt nach unten */
+            justify-content: flex-end;
             position: relative;
         }
 
@@ -32,9 +32,9 @@
         .legal-row {
             display: flex;
             justify-content: center;
-            gap: 40px; /* Abstand zwischen den Punkten */
+            gap: 40px;
             padding: 40px 20px;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7)); /* Sanfter Schatten für Lesbarkeit */
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             flex-wrap: wrap;
         }
 
@@ -46,11 +46,11 @@
         summary {
             font-size: 1.1em;
             font-weight: bold;
-            color: #c9a073; /* Goldton aus deinem Logo */
+            color: #c9a073; /* Goldton */
             cursor: pointer;
             list-style: none;
             transition: color 0.3s;
-            text-shadow: 1px 1px 4px rgba(0,0,0,0.8); /* Macht Text auf dem Bild lesbar */
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
         }
 
         summary:hover {
@@ -71,21 +71,20 @@
             border-radius: 8px;
             border: 1px solid #c9a073;
             width: 90%;
-            max-width: 700px;
-            max-height: 60vh;
+            max-width: 800px;
+            max-height: 70vh;
             overflow-y: auto;
             z-index: 100;
         }
 
-        .content h1, .content h2 { color: #c9a073; }
+        .content h1, .content h2, .content h3, .content h4 { color: #c9a073; margin-top: 20px; }
         .content p, .content li { line-height: 1.6; color: #ccc; }
         .content a { color: #c9a073; text-decoration: none; }
-        .uppercase-text { text-transform: uppercase; font-size: 0.85em; }
+        .uppercase-text { text-transform: uppercase; font-size: 0.85em; font-weight: bold; }
 
-        /* Anpassung für sehr kleine Handys */
         @media (max-width: 600px) {
-            .bg-container { background-size: cover; }
             .legal-row { gap: 15px; flex-direction: column; align-items: center; }
+            .content { bottom: 150px; width: 85%; }
         }
     </style>
 </head>
@@ -105,7 +104,7 @@
             <details>
                 <summary>Information</summary>
                 <div class="content">
-                    <p>Wayvi ist ein unabhängiges Projekt, das Softwarelösungen für soziale Sicherheit und Community-Zusammenhalt entwickelt. Unser Ziel ist es, das urbane Miteinander nachhaltig zu stärken. Wir konzentrieren uns dabei ausschließlich auf digitale Werkzeuge und agieren völlig eigenständig von anderen technologischen Entwicklungsfeldern.</p>
+                    <p>Block ist ein unabhängiges Projekt, das Softwarelösungen für soziale Sicherheit und Community-Zusammenhalt entwickelt. Unser Ziel ist es, das urbane Miteinander nachhaltig zu stärken. Wir konzentrieren uns dabei ausschließlich auf digitale Werkzeuge und agieren völlig eigenständig von anderen technologischen Entwicklungsfeldern.</p>
                 </div>
             </details>
 
@@ -114,10 +113,61 @@
                 <div class="content">
                     <h1>Datenschutzerklärung</h1>
                     <h2>1. Datenschutz auf einen Blick</h2>
-                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen...</p>
+                    <h3>Allgemeine Hinweise</h3>
+                    <p>Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können. Ausführliche Informationen zum Thema Datenschutz entnehmen Sie unserer unter diesem Text aufgeführten Datenschutzerklärung.</p>
+
+                    <h3>Datenerfassung auf dieser Website</h3>
+                    <h4>Wer ist verantwortlich für die Datenerfassung auf dieser Website?</h4>
+                    <p>Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Hinweis zur Verantwortlichen Stelle“ in dieser Datenschutzerklärung entnehmen.</p>
+
+                    <h4>Wie erfassen wir Ihre Daten?</h4>
+                    <p>Ihre Daten werden zum einen dadurch erhoben, dass Sie uns diese mitteilen. Hierbei kann es sich z. B. um Daten handeln, die Sie in ein Kontaktformular eingeben.</p>
+                    <p>Andere Daten werden automatisch oder nach Ihrer Einwilligung beim Besuch der Website durch unsere IT-Systeme erfasst. Das sind vor allem technische Daten (z. B. Internetbrowser, Betriebssystem oder Uhrzeit des Seitenaufrufs). Die Erfassung dieser Daten erfolgt automatisch, sobald Sie diese Website betreten.</p>
+
+                    <h4>Wofür nutzen wir Ihre Daten?</h4>
+                    <p>Ein Teil der Daten wird erhoben, um eine fehlerfreie Bereitstellung der Website zu gewährleisten. Andere Daten können zur Analyse Ihres Nutzerverhaltens verwendet werden. Sofern über die Website Verträge geschlossen oder angebahnt werden können, werden die übermittelten Daten auch für Vertragsangebote, Bestellungen oder sonstige Auftragsanfragen verarbeitet.</p>
+
+                    <h4>Welche Rechte haben Sie bezüglich Ihrer Daten?</h4>
+                    <p>Sie haben jederzeit das Recht, unentgeltlich Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten zu erhalten. Sie haben außerdem ein Recht, die Berichtigung oder Löschung dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen. Außerdem haben Sie das Recht, unter bestimmten Umständen die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen. Des Weiteren steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu.</p>
+                    <p>Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit an uns wenden.</p>
+
+                    <h3>Analyse-Tools und Tools von Drittanbietern</h3>
+                    <p>Beim Besuch dieser Website kann Ihr Surf-Verhalten statistisch ausgewertet werden. Das geschieht vor allem mit sogenannten Analyseprogrammen. Detaillierte Informationen zu diesen Analyseprogrammen finden Sie in der folgenden Datenschutzerklärung.</p>
+
+                    <h2>2. Allgemeine Hinweise und Pflichtinformationen</h2>
+                    <h3>Datenschutz</h3>
+                    <p>Die Betreiber dieser Seiten nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung.</p>
+                    <p>Wir weisen darauf hin, dass die Datenübertragung im Internet Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.</p>
+
                     <h3>Hinweis zur verantwortlichen Stelle</h3>
-                    <p>Robin Milason Kryszak<br>Friedrichstraße 155<br>10117 Berlin<br>E-Mail: team@wayvi.app</p>
-                    <p class="uppercase-text">WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT WIDERSPRUCH EINZULEGEN...</p>
+                    <p>Die verantwortliche Stelle für die Datenverarbeitung auf dieser Website ist:</p>
+                    <p>Robin Milason Kryszak<br>
+                    Friedrichstraße 155<br>
+                    10117 Berlin<br>
+                    Deutschland</p>
+                    <p>Telefon: +4915785460393<br>
+                    E-Mail: team@wayvi.app</p>
+
+                    <h3>Speicherdauer</h3>
+                    <p>Soweit innerhalb dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein berechtigtes Löschersuchen geltend machen oder eine Einwilligung zur Datenverarbeitung widerrufen, werden Ihre Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben.</p>
+
+                    <h3>Widerspruchsrecht gegen die Datenerhebung in besonderen Fällen sowie gegen Direktwerbung (Art. 21 DSGVO)</h3>
+                    <p class="uppercase-text">WENN DIE DATENVERARBEITUNG AUF GRUNDLAGE VON ART. 6 ABS. 1 LIT. E ODER F DSGVO ERFOLGT, HABEN SIE JEDERZEIT DAS RECHT, GEGEN DIE VERARBEITUNG IHRER PERSONENBEZOGENEN DATEN WIDERSPRUCH EINZULEGEN...</p>
+
+                    <h3>Recht auf Auskunft, Berichtigung und Löschung</h3>
+                    <p>Sie haben im Rahmen der geltenden gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung.</p>
+
+                    <h2>3. Datenerfassung auf dieser Website</h2>
+                    <h3>Server-Log-Dateien</h3>
+                    <ul>
+                        <li>Browsertyp und Browserversion</li>
+                        <li>verwendetes Betriebssystem</li>
+                        <li>Referrer URL</li>
+                        <li>Hostname des zugreifenden Rechners</li>
+                        <li>Uhrzeit der Serveranfrage</li>
+                        <li>IP-Adresse</li>
+                    </ul>
+
                     <p>Quelle: <a href="https://www.e-recht24.de" target="_blank">e-recht24.de</a></p>
                 </div>
             </details>
@@ -127,4 +177,3 @@
 
 </body>
 </html>
-
